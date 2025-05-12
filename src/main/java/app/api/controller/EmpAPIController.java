@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/api")
 public class EmpAPIController {
 
     private final EmpService empService;
     
-	@GetMapping("/api/emp/{empno}")
+	@GetMapping("/emp/{empno}")
 	public Emp getDeptByDeptno(@PathVariable Integer empno) {
 		Emp emp = empService.getEmpByEmpno(empno);
 		return emp;
