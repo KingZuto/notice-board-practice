@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class EmpAPIController {
 
     private final EmpService empService;
 
-    @DeleteMapping("/api/emp/{empno}")
+    @DeleteMapping("/emp/{empno}")
     public Emp deleteEmp(@PathVariable Integer empno) {
         return empService.deleteEmp(empno);
     }
